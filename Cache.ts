@@ -61,8 +61,7 @@ class Cache {
      * @param key - the value assigned to this key or undefined
      */
     public static get(key: string): any {
-        const ref: any = Cache.memory[key].value;
-        return ref === undefined ? null : ref;
+        return Cache.exists(key) ? Cache.memory[key].value : undefined;
     }
 
     /**
